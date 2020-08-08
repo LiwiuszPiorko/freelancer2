@@ -1,0 +1,630 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Oswald', sans-serif;
+}
+
+.team {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.team img.color {
+    position: absolute;
+    bottom: 0;
+    right: -5%;
+    height: 36%;
+    z-index: 1;
+    animation: color 4s linear infinite;
+}
+
+.team img.gray {
+    position: absolute;
+    bottom: 0;
+    left: -70%;
+    opacity: 0.2;
+    animation: gray 4s linear infinite;
+
+}
+
+.team .member {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: text 4s linear infinite;
+}
+
+.team h1 {
+    font-size: 4vw;
+    font-weight:400;
+}
+
+.team h2 {
+    font-size: 2.2vw;
+    font-weight:200;
+}
+
+@media (orientation: landscape) {
+    .team img.color {
+        right: 3%;
+        height: 66%;
+    }
+
+    .team img.gray {
+        bottom: -25%;
+        left: 0;
+        height: 120%;
+    }
+
+    .team .member {
+        width: 60%;
+        right: 0;
+        left: auto;
+    }
+}
+
+@keyframes color {
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+
+    8% {
+        opacity: 1;
+    }
+
+    13% {
+        opacity: 1;
+    }
+
+    87% {
+        opacity: 1;
+    }
+
+    92% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-5%);
+        opacity: 0;
+    }
+}
+
+@keyframes gray {
+    0% {
+        transform: translateX(0) scale(1);
+        opacity: 0;
+    }
+
+    8% {
+        opacity: .2;
+    }
+
+    13% {
+        opacity: .2;
+    }
+
+    87% {
+        opacity: .2;
+    }
+
+    92% {
+        opacity: .2;
+    }
+
+    100% {
+        transform: translateX(5%) scale(1.1);
+        opacity: 0;
+    }
+}
+
+@keyframes text {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+
+    8% {
+        opacity: 1;
+    }
+
+    13% {
+        opacity: 1;
+    }
+
+    87% {
+        opacity: 1;
+    }
+
+    92% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.1);
+        opacity: 0;
+    }
+}
+
+.burger {
+    position: fixed;
+    top: 1%;
+    left: 1%;
+    font-size: 3vw;
+    z-index: 2;
+    color: black;
+    cursor: pointer;
+}
+.burger i.off {
+    display: none;
+}
+
+i.fa-arrow-alt-circle-up {
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20vh;
+    background-color: black;
+    transition: .2s;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    list-style: none;
+}
+
+nav ul li a {
+    padding: .2em;
+    color: white;
+    font-size: 3vw;
+    font-weight:200;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+nav.off {
+    top: -100vh;
+}
+.modal-wrap {
+    display: none;
+}
+
+.modal-wrap.active {
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-wrap.active .modal {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 60%;
+    border: 6px solid black;
+
+}
+.modal{
+    display: flex;
+    background-color: black;
+
+}
+.modal .first{
+    flex-basis: 10%;
+    font-size: 2vw;
+    text-align: center;
+    font-weight: 700;
+    color: white;
+}
+
+.modal .second{
+    flex-grow: 1;
+    font-size: 1vw;
+    text-align: center;
+    font-weight: 400;
+    color: white;
+}
+.modal .third{
+    flex-grow: 1;
+    color: white;
+}
+.modal .third h1{
+    font-size: 1.5vw;
+    text-align: center;
+}
+.modal .third p{
+    font-size: 1vw;
+    font-weight: 200;
+    font-style: italic;
+    text-align: center;
+}
+.modal .fourth{
+    flex-grow: 1;
+    color: white;
+}
+.modal .fourth h1{
+
+    font-size: 1.5vw;
+    text-align: center;
+}
+.modal .fourth p{
+
+    font-size: 1vw;
+    font-weight: 200;
+    font-style: italic;
+    text-align: center;
+}
+.modal .fifth{
+    flex-grow: 1;
+    color: white;
+}
+.modal .fifth h1{
+
+    font-size: 1.5vw;
+    text-align: center;
+}
+.modal .fifth p{
+
+    font-size: 1vw;
+    font-weight: 200;
+    font-style: italic;
+    text-align: center;
+}
+
+.hide i {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    font-size: 30px;
+    background-color:black;
+    color: white;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+
+
+}
+.info{
+    height: 150vh;
+}
+.info h1 {
+    height: 10vh;
+    background-color: black;
+    text-align: center;
+    line-height: 10vh;
+    font-size: 2vw;
+    font-weight:400;
+    text-transform: uppercase;
+    color: white;
+}
+
+.employees {
+    height: 150vh;
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.employee {
+    height: 45%;
+    width: 95%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.employee img {
+    width: 40%;
+    height: 80%;
+}
+.employee h2 {
+    width: 40%;
+    height: 80%;
+    font-size: 1.5vw;
+    text-align: justify;
+    font-weight: 200;
+}
+.motto {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-image: url(img/adventure-1807524_1920.jpg);
+    background-size: cover;
+}
+.motto h1 {
+    height: 10vh;
+    background-color: black;
+    text-align: center;
+    line-height: 10vh;
+    font-size: 2vw;
+    font-weight:400;
+    text-transform: uppercase;
+    color: white;
+}
+.text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 60%;
+    width: 70%;
+    z-index: 100;
+}
+
+.motto h2 {
+    padding: 20px;
+    text-align: justify;
+    font-size: 1.5vw;
+    font-weight: 700;
+    font-style: italic;
+    color: white;
+}
+
+.motto p {
+    text-align: right;
+    padding: .3em;
+    font-size: 1vw;
+    font-style: normal;
+    font-weight: 400;
+    color: white;
+}
+.projects h1 {
+    height: 10vh;
+    background-color: black;
+    text-align: center;
+    line-height: 10vh;
+    font-size: 2vw;
+    font-weight:400;
+    text-transform: uppercase;
+    color: white;
+}
+.examples{
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+
+.photo{
+    width: 40%;
+    height: 40%;
+    position: relative;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.photo img{
+    width: 100%;
+    height: 100%; 
+}
+.photo p{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    text-transform: uppercase;
+    text-align: justify;
+    color: white;
+    font-weight: 200;
+}
+.photo p:hover{
+   opacity: 1;
+   font-size: 1vw;
+   background-color:rgba(0, 0, 0, 0.8);
+}
+.contact{
+    position: relative;
+    height: 30vh;
+}
+.contact h1 {
+    height: 10vh;
+    background-color: black;
+    text-align: center;
+    line-height: 10vh;
+    font-size: 2vw;
+    font-weight:400;
+    text-transform: uppercase;
+    color: white;
+}
+.socials {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    min-height: 20vh;
+}
+
+.social {
+    height: 70%;
+    font-size: 2vw;
+    text-align: center;
+    margin-left: 5px;
+
+}
+.social span {
+    margin-left: 5px;
+}
+.social a{
+    text-decoration: none;
+    color: black;
+}
+.social a:hover{
+    color: #b30000;
+    font-size: 6rem;
+}
+.contact button{
+    position: absolute;
+    z-index: 2;
+    bottom: 80%;
+    right: 1%;
+    width: 5em;
+    height: 5em;
+    font-size: 1.5vw;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: #b30000;
+    color: white;
+
+}
+/* responsywność */
+
+@media(orientation:portrait){
+    .team img.color {
+        right: 3%;
+        height: 66%;
+    }
+
+    .team img.gray {
+        bottom: -25%;
+        left: -30%;
+        height: 120%;
+    }
+
+    .team .member {
+        width: 60%;
+        right: 15%;
+        left: auto;
+    }
+    .burger {
+        top:0;
+        font-size: 7vw;
+    }
+    nav {
+        height: 50vh;
+        justify-content: center;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        width: 50%;
+        height: 80%;
+    }
+
+   
+    nav ul li a {
+        font-size: 3vw;
+    }
+    .info h1 {
+        font-size: 4vw;
+    }
+    .employee{
+        flex-direction: column;
+    }
+    .employee>img{
+        height: 50%;
+        width: 70%;
+    }
+    .employee>h2{
+        height:50%;
+        width: 70%;
+        font-size: 3.5vw;
+    }
+    .motto>h1{
+        font-size: 4vw;
+    }
+    .motto {
+        height: 50vh;
+    }
+    .motto h2 {
+        font-size: 2.5vw;
+    }
+    
+    .motto p {
+        font-size: 2vw;
+    }
+    .projects>h1{
+        font-size: 4vw;
+    }
+    .examples{
+        height: 200vh;
+        flex-direction: column;
+        
+    }
+    .photo{
+        width: 90%;
+        height: 20%;
+    }
+    .photo p:hover{
+        font-size: 3.5vw;
+     }
+    .contact>h1{
+        font-size: 4vw;
+    }
+    .contact button{
+        font-size: 5vw;
+        border: 2px solid white;  
+    }
+    .social {
+
+        font-size: 3vw;   
+    }
+    .modal .first{
+        font-size: 4vw;
+    }
+    
+    .modal .second{
+        font-size: 3.5vw;
+    }
+    .modal .third h1{
+        font-size: 3.5vw;
+    }
+    .modal .third p{
+        font-size: 3vw;
+    }
+
+    .modal .fourth h1{
+        font-size: 3.5vw;
+
+    }
+    .modal .fourth p{
+        font-size: 3vw;
+
+    }
+    .modal .fifth h1{
+        font-size: 3.5vw;
+    }
+    .modal .fifth p{ 
+        font-size: 3vw;
+    }
+
+}
+
